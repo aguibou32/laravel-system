@@ -32,7 +32,7 @@
         </div>
     </section>
     
-    <section class="ftco-section bg-light">
+    {{-- <section class="ftco-section bg-light">
         <div class="container-fluid px-4">
             <h1>Our Teachers </h1>
             <div class="row">
@@ -135,7 +135,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @include('inc.footer')
 

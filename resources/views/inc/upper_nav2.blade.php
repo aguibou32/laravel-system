@@ -7,7 +7,7 @@
         
         <form action="#" class="order-lg-last">
             <a href="{{route('callback.create')}}" class="btn rounded-0 py-4 px-5 pr-1 btn-primary d-flex align-items-center justify-content-center">
-                <span> Request Callback</span>
+                <span> Request A Call back</span>
             </a>
         </form>
 
@@ -17,7 +17,7 @@
             <li class="{{Request::path() == 'about' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('pages.about')}}" class="nav-link">About</a></li>
             <li class="{{Request::path() == 'courses' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('courses.index')}}" class="nav-link">Courses</a></li>        
             <li class="{{Request::path() == 'application' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('application.create')}}" class="nav-link">Apply Now</a></li>  
-            <li class="{{Request::path() == 'courses/create' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('courses.create')}}" class="nav-link">Add Course</a></li>
+            
           
             @guest
                   <li class="nav-item">
