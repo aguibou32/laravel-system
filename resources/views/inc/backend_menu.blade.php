@@ -27,6 +27,8 @@
                     <p class="font-weight-bold text-dark">Menu</p>
                     <hr>
                     
+                    <li><a href="{{route('callback.index')}}" class="text text-dark">Callback Requests</a></li>
+                    li><a href="{{route('courses.create')}}" class="text text-dark">Add Course on website</a></li>
                     <li><a href="{{route('module.index')}}" class="text text-dark">Show modules</a></li>                            
                     <li><a href="{{route('module.create')}}" class="text text-dark">Create modules</a></li>                            
                     <li><a href="{{route('notices.index')}}" class="text text-dark">Show Notices</a></li>                            

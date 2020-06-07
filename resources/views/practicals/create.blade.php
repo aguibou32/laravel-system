@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <label for="due_date">Due Date and Time</label>
-                        <input type="datetime-local" name="due_date" id="due_date" class="form-control @error('due_date') is-invalid @enderror" value="{{old('due_date')}}" placeholder="Example: Module Code">
+                            <input type="datetime-local" name="due_date" id="due_date" class="form-control @error('due_date') is-invalid @enderror" value="{{old('due_date')}}" placeholder="Example: Module Code">
                             @error('due_date')
                                 <span class="help text-danger" role="alert">
                                     {{$errors->first('due_date')}}

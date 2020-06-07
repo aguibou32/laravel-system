@@ -47,6 +47,8 @@ Route::resource('students', 'StudentsController');
 
 Route::resource('users', 'UsersController');
 
+Route::resource('callback', 'RequestCallBackController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

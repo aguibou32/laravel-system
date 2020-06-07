@@ -5,32 +5,29 @@
             <span class="oi oi-menu"></span> Menu
         </button>
         
-        <form action="#" class="searchform order-lg-last">
-            <div class="form-group d-flex">
-                <input type="text" class="form-control pl-3" placeholder="Search">
-                <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
-            </div>
+        <form action="#" class="order-lg-last">
+            <a href="{{route('callback.create')}}" class="btn rounded-0 py-4 px-5 pr-1 btn-primary d-flex align-items-center justify-content-center">
+                <span> Request Callback</span>
+            </a>
         </form>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav mr-auto">
             <li class="{{Request::path() == 'home' ? 'nav-item active' : 'nav-item' }} "> <a href="{{route('pages.welcome')}}" class="nav-link pl-0">Home</a></li>
             <li class="{{Request::path() == 'about' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('pages.about')}}" class="nav-link">About</a></li>
-            <li class="{{Request::path() == 'courses' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('courses.index')}}" class="nav-link">Courses</a></li>
-            <li class="{{Request::path() == 'team' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('pages.ourteam')}}" class="nav-link">Our Team</a></li>
-            <li class="{{Request::path() == 'application' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('application.create')}}" class="nav-link">Apply Now</a></li>
-            
+            <li class="{{Request::path() == 'courses' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('courses.index')}}" class="nav-link">Courses</a></li>        
+            <li class="{{Request::path() == 'application' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('application.create')}}" class="nav-link">Apply Now</a></li>  
             <li class="{{Request::path() == 'courses/create' ? 'nav-item active' : 'nav-item' }}"><a href="{{route('courses.create')}}" class="nav-link">Add Course</a></li>
           
             @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   </li>
-                  @if (Route::has('register'))
+                  {{-- @if (Route::has('register'))
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                       </li>
-                  @endif
+                  @endif --}}
               @else
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
