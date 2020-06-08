@@ -77,6 +77,19 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <label for="module_lecturer">Select lecturer for this module</label>
+                            <select name="module_lecturer" id="module_lecturer" class="form-control dropdown-toggle">
+                                @if (count($lecturers)> 0)
+                                    @foreach ($lecturers as $lecturer)                                       
+                                        <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
+                                    @endforeach
+                                @else
+                                    <option value="">no data</option>
+                                @endif
+                            </select>
+                        </div>
     
                         <div class="form-group">
                             <button class="btn btn-primary rounded-0">Submit</button>

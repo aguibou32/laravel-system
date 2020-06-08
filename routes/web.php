@@ -49,6 +49,8 @@ Route::resource('users', 'UsersController');
 
 Route::resource('callback', 'RequestCallBackController');
 
+Route::resource('add_student_to_course', 'AddStudentToModule');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

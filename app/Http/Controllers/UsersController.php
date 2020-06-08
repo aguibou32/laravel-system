@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Student;
+use App\Lecturer;
+use DB;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -51,7 +55,6 @@ class UsersController extends Controller
             'name' =>  ['required', 'max:255'],
             'surname' => 'required',
             'email' =>'required',
-            'username' =>'required',
             'profile_type' => 'required'
         ]);
 
@@ -68,19 +71,56 @@ class UsersController extends Controller
         $user->name = request('name');
         $user->surname = request('surname');
         $user->email = request('surname');
-        $user->username = request('username');
+
+        $username = date("Y") . count(User::all());
+
+        $lastuser = DB::table('users')->latest()->first();
+        $laststudent = DB::table('students')->latest()->first();
+        $lastlecturer = DB::table('lecturers')->latest()->first();
+        
+        $last_user_id = 0;
+        $lastuser == null ? $last_user_id = 1 :  $last_user_id = $lastuser->id + 1;
+
+        $user->username = $username;
         $user->profile_type = request('profile_type');
+
+        if ($user->profile_type == "App\Student") {
+
+            $student = new Student();        
+                                    
+            $last_student_id  = 0;
+            $laststudent == null ? $last_student_id = 1 :  $last_student_id = $laststudent->id + 1;
+
+            $username = date("Y") . $last_user_id . $last_student_id ."00";
+
+            $user->username = $username;
+            $user->profile_id = $last_student_id;
+            
+            $student->student_number = $username;
+            $student->save();
+        }
+        else if($user->profile_type == "App\Lecturer"){
+
+            $lecturer = new Lecturer();
+
+            $last_lecturer_id = 0;
+            $lastlecturer == null ? $last_lecturer_id = 1 :  $last_lecturer_id = $lastlecturer->id + 1;
+
+            
+            $username = date("Y") . $last_user_id . $last_lecturer_id ."00";
+
+            $user->username = $username;
+            $user->profile_id = $last_lecturer_id;
+
+            $lecturer->lecturer_number = $username;
+            $lecturer->save();
+        }
+        
         $user->password = Hash::make(request('username'));
 
         $user->save();
 
-        // $user->name = request('name');
-        // $user->surname = request('surname');
-        // $user->email = request('email');
-        // $user->username = request('username');
-        // $user->password = Crypt::encrypt(request('username'));
-
-        // $user->save;
+    
 
         return redirect()->route('users.index');
     }

@@ -10,6 +10,10 @@ class Module extends Model
 
     protected $guarded = [];
 
+    public function students(){
+        return $this->BelongsToMany(Student::class)->withTimeStamps();
+    }
+
     public function lecturer(){
         
         return $this->hasOne(Lecturer::class);
@@ -17,10 +21,6 @@ class Module extends Model
 
     public function practical(){
         return $this->hasMany(Practical:: class);
-    }
-
-    public function students(){
-        return $this->hasMany(Student::class);
     }
 
     public function notes(){

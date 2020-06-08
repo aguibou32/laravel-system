@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModuleNoticesTable extends Migration
+class CreateModuleStudentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateModuleNoticesTable extends Migration
      */
     public function up()
     {
-        Schema::create('module_notices', function (Blueprint $table) {
+        Schema::create('module_student', function (Blueprint $table) {
             $table->id();
-            $table->string('notice_title');
-            $table->longText("notice_body");
-            $table->unsignedBigInteger('module_id')->nullable();
+            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('student_id');
             $table->timestamps();
 
+            $table->unique(['module_id', 'student_id']);
+
             $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
         });
     }
 
@@ -31,6 +33,6 @@ class CreateModuleNoticesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('module_notices');
+        Schema::dropIfExists('module_student');
     }
 }

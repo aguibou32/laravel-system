@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Module;
+use App\Student;
 
 class ModulesController extends Controller
 {
@@ -16,10 +18,10 @@ class ModulesController extends Controller
     {
         //
         $modules = Module::orderBy('created_at', 'desc')->get();
-        
         // return $modules;
+        $students = Student::orderBy('created_at', 'desc')->get();
 
-        return view('modules.index')->with('modules', $modules);
+        return view('modules.index')->with('modules', $modules)->with('students', $students);
     }
 
     /**
@@ -30,7 +32,13 @@ class ModulesController extends Controller
     public function create()
     {
         //
-        return view('modules.create');
+        // $lecturers = User::where('profile_type','App\Lecturer')->Or('profile_type','App\Administrator')->get(); // This for when we add addministrator as Lecturer
+        
+        $lecturers = User::where('profile_type','App\Lecturer')->get();
+
+        // return $lecturers;
+
+        return view('modules.create')->with('lecturers', $lecturers);
     }
 
     /**
@@ -53,9 +61,12 @@ class ModulesController extends Controller
             'module_code' => 'required',
             'module_duration'  => 'required',
             'module_description' => 'required',            
-            'module_image'  => ['required', 'image', 'max:1999'] // or required can be nullable if we want so that it is not required for the user  
+            'module_image'  => ['required', 'image', 'max:1999'], // or required can be nullable if we want so that it is not required for the user  
                                                                 // the 1999 is the maximum size of the picture. We are making it lesser than 2 magabits
+            'module_lecturer' => 'required'
         ]);
+
+        
 
         // Handling the file upload
         if($request->hasFile('module_image')){
@@ -80,8 +91,17 @@ class ModulesController extends Controller
         $module->module_duration = request('module_duration');
         $module->module_description = request('module_description');
         $module->module_image = $fileNameToStore;
-      
+              
+       
         $module->save();
+
+        //$id = request('module_lecturer');
+        //$user = User::find($id);
+
+        //$lecturer = $user->profile->student_number = $module->id;
+        
+        //return $lecturer;
+      
 
         return redirect('/module')->with('success', 'module created successfully !');
     }

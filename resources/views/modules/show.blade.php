@@ -30,12 +30,12 @@
                               </div>
                               <div class="card-footer">
                                   <form method="POST" action="/module/{{$module->id}}" class="">
-                                        <a href="{{$module->id}}/edit" class="tag-cloud-link btn btn-xsmall btn-warning rounded-0">Edit this Course</a>
+                                        <a href="{{$module->id}}/edit" class="tag-cloud-link btn btn-xsmall btn-warning btn-sm rounded-0">Edit this Course</a>
                                         
                                         {{-- Those following are needed for the deleting to --}}
                                         @csrf
                                         @method('DELETE')
-                                        <button class="tag-cloud-link btn btn-xsmall btn-danger rounded-0" onclick="return confirm('Do you want to remove this course?')">Delete this Course</button>
+                                        <button class="tag-cloud-link btn btn-xsmall btn-danger btn-sm rounded-0" onclick="return confirm('Do you want to remove this course?')">Delete this Course</button>
                                     </form>
                               </div>
                             </div>

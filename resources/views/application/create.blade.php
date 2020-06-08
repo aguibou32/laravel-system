@@ -55,8 +55,6 @@
                         <select name="gender" id="gender" class="form-control">
                             <option value="male">male</option>
                             <option value="female">female</option>
-                            <option value="hemale">hemale</option>
-                            <option value="shemale">shemale</option>
                         </select>
                     </div>
 

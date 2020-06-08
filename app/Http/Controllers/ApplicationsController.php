@@ -25,7 +25,7 @@ class ApplicationsController extends Controller
     public function create()
     {
         //
-        return view('application.application_create');
+        return view('application.create');
     }
 
     /**

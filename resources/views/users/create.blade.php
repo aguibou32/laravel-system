@@ -52,18 +52,7 @@
                                 </span>
                             @enderror
                         </div>
-
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}" placeholder="Example: 218029445">
-                            
-                            @error('username')
-                                <span class="help text-danger" role="alert">
-                                    {{$errors->first('username')}}
-                                </span>
-                            @enderror
-                        </div>
-
+                       
                         <div class="form-group">
                             <label for="profile_type">Profile Type</label>
                             <select name="profile_type" id="profile_type" class="form-control" data-dependant="state">
@@ -71,20 +60,7 @@
                                 <option value="App\Lecturer">Lecturer</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="student_number">Student Number</label>
-                            <input type="text" name="student_number" id="student_number" class="form-control @error('student_number') is-invalid @enderror" value="{{old('student_number')}}" placeholder="Example: 218029445">
-                            
-                            @error('student_number')
-                                <span class="help text-danger" role="alert">
-                                    {{$errors->first('student_number')}}
-                                </span>
-                            @enderror
-                        </div>
-                        
-                       
-                        
+                                                         
                         <div class="form-group">
                             <button class="btn btn-primary rounded-0">Submit</button>
                         </div>

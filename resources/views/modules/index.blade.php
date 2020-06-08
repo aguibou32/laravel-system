@@ -35,8 +35,43 @@
                         <small><span>module created on: {{$module->created_at}}</span></small>
                         </div>
                         <div class="card-footer">                            
-                          <a href="module/{{$module->id}}"><button class="btn btn-info">view module</button></a>
+                          <a href="module/{{$module->id}}"><button class="btn btn-sm btn-info">view module</button></a>
+                          <button class="tag-cloud-link btn btn-xsmall btn-info btn-sm" data-toggle="modal" data-target="#addStudentModal">Add students to this Module</button>
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                  <form action="" method="post">
+                                      
+                                      <select name="selectStudent" id="selectStudent">
+                                          
+                                          @if (count($students)>0)
+                                            @foreach ($students as $student)
+                                                <option value="">{{ $student->student_number }}</option>
+                                            @endforeach
+                                          @else
+                                              <option value="">No data</option>
+                                          @endif
+                                      </select>
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info">Add student </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                     <br>

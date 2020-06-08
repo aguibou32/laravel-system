@@ -47,7 +47,7 @@
                         <th scope="row"><a href="">{{$user->name}}</a></th>
                         <td>{{$user->surname}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->profile_type}}</td>
+                        <td>{{$user->profile_type == "App\Student" ? "Student" : "Lecturer" }}</td>
                         <td>{{$user->created_at}}</td>
                         <td>
                           <form method="POST" action="{{ route('users.destroy', $user->id) }}" class="">
