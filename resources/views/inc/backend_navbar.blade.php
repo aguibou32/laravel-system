@@ -3,7 +3,7 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Dashboard</h5>
         @auth
             <nav class="my-2 my-md-0 mr-md-3">
-                <span class="badge badge-secondary">Loged in as:  {{auth()->user()->username}}</span>
+                <span class="badge badge-secondary">Loged in as:  {{auth()->user()->name}}</span>
             </nav>
         @endauth
       </div>

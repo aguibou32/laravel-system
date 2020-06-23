@@ -3,15 +3,16 @@
         <div class="row no-gutters d-flex align-items-center align-items-stretch">
             <div class="col-md-4 d-flex align-items-center py-4">
                  {{-- <a class="navbar-brand" href="{{route('pages.welcome')}}">OR. <span>Training Center</span></a> --}}
-                <img src="assests/images/logo.jpeg" alt="">
+                 <img src="{{URL::asset('/storage/assets/images/logo.jpg')}}" alt="" class="img-fluid">
                 </div>
+                
             <div class="col-lg-8 d-block">
                 <div class="row d-flex">
                     <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
                         <div class="text">
                             <span>Email</span>
-                            <span>info@mechengendesign.co.za</span>
+                            <span>info@oracademy.co.za</span>
                         </div>
                     </div>
                     <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">

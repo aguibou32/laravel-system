@@ -11,9 +11,7 @@
          <div class="pt-5 mt-5">
           
           <div class="comment-form-wrap pt-5">
-            
-           
-
+   
             <h3 class="mb-5 h4 font-weight-bold">Post a course on the website </h3>
                 <form method="POST" action="{{route('courses.store')}}" enctype="multipart/form-data" class="p-5 bg-light">
                    
@@ -98,6 +96,10 @@
         </div>
     </section>
     
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+    CKEDITOR.replace( 'description' );
+    </script>
 @endsection
 
 

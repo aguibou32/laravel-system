@@ -24,6 +24,7 @@ class CreateApplicationsTable extends Migration
             $table->string('email_address');
             $table->string('name_on_certificate');
             $table->string('id_or_passport_number');
+            $table->string('course_apply');
             $table->string('institution_name');
             $table->year('year_of_study');
             $table->string('highest_educational_qualification_name')->default("test");            

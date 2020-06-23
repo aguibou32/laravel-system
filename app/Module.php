@@ -14,8 +14,7 @@ class Module extends Model
         return $this->BelongsToMany(Student::class)->withTimeStamps();
     }
 
-    public function lecturer(){
-        
+    public function lecturer(){        
         return $this->hasOne(Lecturer::class);
     }
 

@@ -20,63 +20,73 @@
                     <div class="col-md-10 wrap-about py-5 pr-md-4 ftco-animate">@include('inc.messages')</div>
                   </div>
                   <div class="row">                   
-                  @foreach ($modules as $module)        
-                    <div class="col-lg-6 col-md-8 pb-5">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{URL::asset('/storage/assets/images/' . $module->module_image)}}" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">{{$module->module_name}}</a>
-                          </h4>
-                            <h5>{{$module->module_duration}}</h5>
-                            <p class="card-text">{{$module->module_description}}</p>
-                          <p>Lecturer: Prof Diallo</p>
-                          <p>{{count($module->students)}} students registered for this module</p>
-                        <small><span>module created on: {{$module->created_at}}</span></small>
-                        </div>
-                        <div class="card-footer">                            
-                          <a href="module/{{$module->id}}"><button class="btn btn-sm btn-info">view module</button></a>
-                          <button class="tag-cloud-link btn btn-xsmall btn-info btn-sm" data-toggle="modal" data-target="#addStudentModal">Add students to this Module</button>
-                        </div>
+                    @if (count($modules)>0)
+                        @foreach ($modules as $module)        
+                        <div class="col-lg-6 col-md-8 pb-5">
+                          <div class="card h-100">
+                            <a href="module/{{$module->id}}"><img class="card-img-top" src="{{URL::asset('/storage/assets/images/' . $module->module_image)}}" alt=""></a>
+                            <div class="card-body">
+                              <h4 class="card-title">
+                                <a href="module/{{$module->id}}">{{$module->module_name}}</a>
+                              </h4>
+                                <h5></h5>
+                                <p class="card-text">{!! $module->module_description !!}</p>
+                              <p>{{ $module->name}}</p>
+                              <p>{{count($module->students)}} student(s) registered for this module</p>
+                            <small><span>module created on: {{$module->created_at}}</span></small>
+                            </div>
+                            <div class="card-footer">                            
+                              <a href="module/{{$module->id}}"><button class="btn btn-sm btn-info">view module</button></a>
+                              <button class="tag-cloud-link btn btn-xsmall btn-info btn-sm" data-toggle="modal" data-target="#addStudentModal">Add students to this Module</button>
+                            </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                  <form action="" method="post">
-                                      
-                                      <select name="selectStudent" id="selectStudent">
+                            <!-- Modal -->
+                            <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <form action="" method="post">
                                           
-                                          @if (count($students)>0)
-                                            @foreach ($students as $student)
-                                                <option value="">{{ $student->student_number }}</option>
-                                            @endforeach
-                                          @else
-                                              <option value="">No data</option>
-                                          @endif
-                                      </select>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-info">Add student </button>
+                                          <select name="selectStudent" id="selectStudent">
+                                              
+                                              @if (count($students)>0)
+                                                @foreach ($students as $student)
+                                                    <option value="">{{ $student->student_number }}</option>
+                                                @endforeach
+                                              @else
+                                                  <option value="">No data</option>
+                                              @endif
+                                          </select>
+                                      </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-info">Add student </button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
+
                           </div>
                         </div>
-
+                        <br>
+                                            
+                      @endforeach
+                    @else
+                        <div class="container-fluid alert alert-danger alert-dismissible fade show" role="alert">
+                          No module to display yet
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                          </button>
                       </div>
-                    </div>
-                    <br>
-                                        
-                 @endforeach
+                        
+                    @endif
                 
                 </div>
                 </div>

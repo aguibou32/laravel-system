@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Module;
 use App\Student;
+use App\Lecturer;
+
 
 class ModulesController extends Controller
 {
@@ -19,9 +21,12 @@ class ModulesController extends Controller
         //
         $modules = Module::orderBy('created_at', 'desc')->get();
         // return $modules;
+
         $students = Student::orderBy('created_at', 'desc')->get();
 
-        return view('modules.index')->with('modules', $modules)->with('students', $students);
+        return view('modules.index')->with('modules', $modules)
+                                    ->with('students', $students);
+                                   
     }
 
     /**
@@ -93,15 +98,25 @@ class ModulesController extends Controller
         $module->module_image = $fileNameToStore;
               
        
-        $module->save();
+        $module->save(); // Saving the modules first 
 
-        //$id = request('module_lecturer');
-        //$user = User::find($id);
-
-        //$lecturer = $user->profile->student_number = $module->id;
         
-        //return $lecturer;
+
+        $user_id = request('module_lecturer');     // Then we get the id of the lecturer we passed at the select box   
+
+        $user = User::find($user_id); // Then we find the user associated with that lecturer using the previous id
+
+        $lecturer_id = $user->profile->id;  // Using the relationship beetween user and lecturer, we find the lecturer id      
       
+        $lecturer = Lecturer::find($lecturer_id);
+        
+        // return $lecturer;
+
+        $lecturer->module_id = $module->id;
+
+        $lecturer->save();
+      
+        // return $lecturer;
 
         return redirect('/module')->with('success', 'module created successfully !');
     }
@@ -117,7 +132,15 @@ class ModulesController extends Controller
         //
         $module = Module:: findOrFail($id); 
 
-        return view('modules.show')->with('module', $module);
+        // return $module->lecturer->lecturer_number;
+
+        $lecturer = User::where('username', $module->lecturer->lecturer_number)->first();
+
+        // return $lecturer->name;
+
+        return view('modules.show')->with('module', $module)
+                                   ->with('lecturer_name', $lecturer->name)
+                                   ->with('lecturer_surname', $lecturer->surname);
     }
 
     /**
@@ -132,8 +155,9 @@ class ModulesController extends Controller
         $module = Module:: findOrFail($id); 
 
         // return $module;
+        $lecturers = User::where('profile_type','App\Lecturer')->get();
 
-        return view('modules.edit')->with('module', $module);
+        return view('modules.edit')->with('module', $module)->with('lecturers', $lecturers);
     }
 
     /**
@@ -185,7 +209,21 @@ class ModulesController extends Controller
       
             $module->save();
 
-            return redirect('/module')->with('success', 'module updated successfully !');
+            $user_id = request('module_lecturer');     // Then we get the id of the lecturer we passed at the select box   
+
+                $user = User::find($user_id); // Then we find the user associated with that lecturer using the previous id
+
+                $lecturer_id = $user->profile->id;  // Using the relationship beetween user and lecturer, we find the lecturer id      
+            
+                $lecturer = Lecturer::find($lecturer_id);
+                
+                // return $lecturer;
+
+                $lecturer->module_id = $module->id;
+
+                $lecturer->save();
+
+                return redirect('/module')->with('success', 'module updated successfully !');
     }
 
     /**

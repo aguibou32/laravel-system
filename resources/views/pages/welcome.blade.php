@@ -24,7 +24,6 @@
           <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-6 ftco-animate">
             <h1 class="mb-4">Matric Rewrite, 3D mechanical Design, FREE basic computer courses</h1>
-            <p>OR Acamedy grants you access to its facilities to ensure a high quality of your learning. </p>
             <p><a href="{{route('pages.about')}}" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
           </div>
         </div>
@@ -33,56 +32,11 @@
     </section>
 
 
-    <section class="ftco-services ftco-no-pb">
-      <div class="container-wrap">
-         <div class="row no-gutters">
-       <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
-         <div class="media block-6 d-block text-center">
-           <div class="icon d-flex justify-content-center align-items-center">
-               <span class="flaticon-teacher"></span>
-           </div>
-           <div class="media-body p-2 mt-3">
-             <h3 class="heading">Certified Teachers</h3>
-             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-           </div>
-         </div>      
-       </div>
-       <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-         <div class="media block-6 d-block text-center">
-           <div class="icon d-flex justify-content-center align-items-center">
-               <span class="flaticon-reading"></span>
-           </div>
-           <div class="media-body p-2 mt-3">
-             <h3 class="heading">Special Education</h3>
-             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-           </div>
-         </div>    
-       </div>
-       <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
-         <div class="media block-6 d-block text-center">
-           <div class="icon d-flex justify-content-center align-items-center">
-               <span class="flaticon-books"></span>
-           </div>
-           <div class="media-body p-2 mt-3">
-             <h3 class="heading">Book &amp; Library</h3>
-             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-           </div>
-         </div>      
-       </div>
-       <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-         <div class="media block-6 d-block text-center">
-           <div class="icon d-flex justify-content-center align-items-center">
-               <span class="flaticon-diploma"></span>
-           </div>
-           <div class="media-body p-2 mt-3">
-             <h3 class="heading">Sport Clubs</h3>
-             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-           </div>
-         </div>      
-       </div>
-     </div>
-      </div>
-   </section>
+   <div class="container-fluid mt-4">
+      <p> O.R Academy is a flexible and accessible learning centre which specializes in the provision of tutoring to students from Mechanical Engineering Design, Matric Re-writes, Adult matric and I.T courses in South Africa through contact sessions at our Johannesburg campus and online tuition. We have flexible and excellent Lecturers prepared to offer you the best quality tuition to pass with ease whilst studying in the convenience of your time.
+         We have been helping people reach their education dreams for years now. Founded with passion for education, we always strive to make our students’ study experience as inspiring and as enriching as possible. 
+         </p>
+   </div>
 
 
 
@@ -100,8 +54,8 @@
                      <div class="services-2 d-flex">
                         <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
                         <div class="text pl-3">
-                           <h3>Regular Classes</h3>
-                           <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                           <h3>Autodesk Inventor CAD</h3>
+                           <p>Autodesk Inventor offers an easy to use set of tools for 3D mechanical design, documentation, and product simulation. Inventor helps you design and validate your products before they are built to deliver better products faster and save you money. </p>
                         </div>
                      </div>
                   </div>
@@ -109,8 +63,8 @@
                      <div class="services-2 d-flex">
                         <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
                         <div class="text pl-3">
-                           <h3>Certified Teachers</h3>
-                           <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                           <h3>Matric Re-writes</h3>
+                           <p>Matric Re-write is for matriculates who still have valid School based assessment (SBA) and looking to improve their marks.</p>
                         </div>
                      </div>
                   </div>
@@ -118,8 +72,8 @@
                      <div class="services-2 d-flex">
                         <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
                         <div class="text pl-3">
-                           <h3>Sufficient Classrooms</h3>
-                           <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                           <h3>Adult Matric</h3>
+                           <p>Enables adults who did not complete their high school education, or failed their matric examination, to obtain their school leaving certificate and further their education or secure employment. </p>
                         </div>
                      </div>
                   </div>
@@ -127,20 +81,12 @@
                      <div class="services-2 d-flex">
                         <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
                         <div class="text pl-3">
-                           <h3>Creative Lessons</h3>
-                           <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                           <h3>Computer literacy Classes</h3>
+                           <p>Computers systems are now part of everyday routines! Tutorial Campus offers various computer courses that are essential skill for life.</p>
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6">
-                     <div class="services-2 d-flex">
-                        <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
-                        <div class="text pl-3">
-                           <h3>Sports Facilities</h3>
-                           <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-                        </div>
-                     </div>
-                  </div>
+                  
                </div>
             </div>
          </div>

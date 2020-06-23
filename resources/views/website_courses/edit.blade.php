@@ -69,6 +69,11 @@
         </div>
     </section>
     
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+    CKEDITOR.replace( 'description' );
+    </script>
+    
 @endsection
 
 

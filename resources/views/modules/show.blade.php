@@ -24,9 +24,10 @@
                                 <h4 class="card-title">
                                     <a href="#">{{$module->module_name}}</a>
                                 </h4>
-                                <h5>{{$module->module_duration}}</h5>
-                                    <p class="card-text">{{$module->module_description}}</p>
-                                <p>Lecturer: Prof Diallo</p>
+                                <h5>duration: {{$module->module_duration}}</h5>
+                                
+                                <p class="card-text">{!! $module->module_description !!}</p>
+                                <p>lectured by: {{$lecturer_name }} {{ $lecturer_surname }}</p>
                               </div>
                               <div class="card-footer">
                                   <form method="POST" action="/module/{{$module->id}}" class="">
@@ -46,6 +47,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 <br>
 

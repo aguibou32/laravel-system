@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="module_description">Description</label>
+                            <label for="module_description">Module Description</label>
                             <textarea name="module_description" id="module_description" class="form-control @error('module_description') is-invalid @enderror" cols="30" rows="4" placeholder="Describe the course">{{old('module_description')}}</textarea>
                             
                             @error('module_description')
@@ -100,6 +100,10 @@
         </div>
     </div>
 </div>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'module_description' );
+    </script>
 @endsection
 
 

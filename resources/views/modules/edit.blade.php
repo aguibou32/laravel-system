@@ -45,7 +45,20 @@
                             <label for="module_image">Choose picture</label>
                             <input type="file" name="module_image" id="module_image" class="form-control" value="{{$module->module_image}}">
                         </div>
-    
+                        
+                        <div class="form-group">
+                            <label for="module_lecturer">Select lecturer for this module</label>
+                            <select name="module_lecturer" id="module_lecturer" class="form-control dropdown-toggle">
+                                @if (count($lecturers)> 0)
+                                    @foreach ($lecturers as $lecturer)                                       
+                                        <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
+                                    @endforeach
+                                @else
+                                    <option value="">no data</option>
+                                @endif
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <button class="btn btn-primary rounded-0">Submit</button>
                         </div>
@@ -55,6 +68,11 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'module_description' );
+    </script>
 @endsection
 
 

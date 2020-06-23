@@ -15,6 +15,9 @@ class ApplicationsController extends Controller
     public function index()
     {
         //
+        $applications = Application::orderBy('created_at', 'desc')->get();
+
+        return view('application.index')->with('applications', $applications);
     }
 
     /**
@@ -53,11 +56,12 @@ class ApplicationsController extends Controller
             'email_address' => 'required',
             'name_on_certificate' => 'required',
             'id_or_passport_number' => 'required',
+            'course_apply' => 'required',
             'institution_name' => 'required',
             'year_of_study' => 'required',
             'highest_educational_qualification_name' => 'required',
-            'certificate' => ['required', 'file', 'max:1999'],
-            'id_or_passport_document' => 'required',
+            'certificate' => 'required|mimes:pdf|max:10000',
+            'id_or_passport_document' => 'required|mimes:pdf|max:10000',
             'declaration' => 'required'
             ]);
 
@@ -109,6 +113,7 @@ class ApplicationsController extends Controller
             $application->email_address = request('email_address');
             $application->name_on_certificate = request('name_on_certificate');
             $application->id_or_passport_number = request('id_or_passport_number');
+            $application->course_apply = request('course_apply');
             $application->institution_name = request('institution_name');
             $application->year_of_study = request('year_of_study');
             $application->highest_educational_qualification_name = request('highest_educational_qualification_name');
@@ -119,7 +124,7 @@ class ApplicationsController extends Controller
 
             $application->save();
 
-            return redirect("/welcome")->with('sucess', "application was sent !");
+            return redirect("/")->with('sucess', "your application has been sent !");
     }   
     
 
@@ -132,6 +137,10 @@ class ApplicationsController extends Controller
     public function show($id)
     {
         //
+        $application = Application::findOrFail($id);
+
+
+        return view('application.show')->with('application', $application);
     }
 
     /**
@@ -166,5 +175,9 @@ class ApplicationsController extends Controller
     public function destroy($id)
     {
         //
+        $application = Application::findOrFail($id);
+        $application->delete();
+
+        return redirect()->route("application.index");
     }
 }

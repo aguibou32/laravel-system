@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
     // });
     
     // The web page routes 
-Route::get('/welcome', 'PagesController@welcome')->name('pages.welcome');
+Route::get('/', 'PagesController@welcome')->name('pages.welcome');
 Route::get('/about', 'PagesController@about')->name('pages.about');
 Route::get('/team', 'PagesController@team')->name('pages.ourteam');
 
@@ -47,11 +47,11 @@ Route::resource('students', 'StudentsController');
 
 Route::resource('users', 'UsersController');
 
-Route::resource('callback', 'RequestCallBackController');
+Route::resource('callback', 'RequestCallBackController')->middleware('auth');;
 
 Route::resource('add_student_to_course', 'AddStudentToModule');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 

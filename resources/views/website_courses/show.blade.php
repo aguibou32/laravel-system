@@ -13,25 +13,25 @@
               
       <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
         <h2 class="mb-3">{{$course->title}}</h2>
-            <p> {{$course->description}}</p>
+            <p> {!! $course->description !!}</p>
             <p>
               <img src="{{URL::asset('/storage/assets/images/' . $course->course_image)}}" alt="" class="img-fluid">
             </p>
-            <p>posted on: <span><i class="icon mr-2">{{$course->created_at}}
+            {{-- <p>posted on: <span><i class="icon mr-2">{{$course->created_at}} --}}
            
             <form method="POST" action="/courses/{{$course->id}}" class="">
-                <a href="/courses/{{$course->id}}/edit" class="tag-cloud-link btn btn-xsmall btn-warning rounded-0">Edit this Course</a>
+                {{-- <a href="/courses/{{$course->id}}/edit" class="tag-cloud-link btn btn-xsmall btn-warning rounded-0">Edit this Course</a> --}}
                 
                 {{-- Those following are needed for the deleting to --}}
                 @csrf
                 @method('DELETE')
-                <button class="tag-cloud-link btn btn-xsmall btn-danger rounded-0" onclick="return confirm('Do you want to remove this course?')">Delete this Course</button>
+                {{-- <button class="tag-cloud-link btn btn-xsmall btn-danger rounded-0" onclick="return confirm('Do you want to remove this course?')">Delete this Course</button> --}}
             </form>
             </i></span></p>
             
 
             
-            <p><a href="./{{route('application.create')}}" class="btn btn-primary">Apply Now</a></p>
+            <p><a href="{{route('application.create')}}" class="btn btn-primary">Apply Now</a></p>
       </div> <!-- .col-md-8 -->
 
       <div class="col-lg-4 sidebar ftco-animate fadeInUp ftco-animated">

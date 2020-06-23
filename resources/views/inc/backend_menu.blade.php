@@ -27,23 +27,25 @@
                     <p class="font-weight-bold text-dark">Menu</p>
                     <hr>
                     
+                    {{-- <li><a href="{{route('users.index')}}" class="text text-dark">Users</a></li> --}}
+                    <li><a href="{{route('application.index')}}" class="text text-dark">Applications</a></li>
+                    {{-- <li><a href="{{route('module.create')}}" class="text text-dark">Create module</a></li>                             --}}
+                    {{-- <li><a href="{{route('module.index')}}" class="text text-dark">Show modules</a></li>                             --}}
+                    {{-- <li><a href="{{route('notices.index')}}" class="text text-dark">Show Notices</a></li>                             --}}
                     <li><a href="{{route('callback.index')}}" class="text text-dark">Callback Requests</a></li>
-                    <a href="{{route('courses.create')}}" class="text text-dark">Add Course on website</a></li>
-                    <li><a href="{{route('module.index')}}" class="text text-dark">Show modules</a></li>                            
-                    <li><a href="{{route('module.create')}}" class="text text-dark">Create modules</a></li>                            
-                    <li><a href="{{route('notices.index')}}" class="text text-dark">Show Notices</a></li>                            
-                    <li><a href="{{route('notices.create')}}" class="text text-dark">Post Notice</a></li>                            
-                    <li><a href="{{route('practicals.index')}}" class="text text-dark">Practicals</a></li>
-                    <li><a href="{{route('practicals.create')}}" class="text text-dark">Add Practical</a></li>                            
-                    <li><a href="{{route('notices.create')}}" class="text text-dark">Post Notice</a></li>                            
-                    <li><a href="" class="text text-dark">Marks</a></li>                            
-                    <li><a href="" class="text text-dark">Notice boards</a></li>                        
-                    <li><a href="" class="text text-dark">Lectures notes</a></li>
-                    <li><a href="" class="text text-dark">Online Exercises</a></li>
-                    <li><a href="" class="text text-dark">Online Exercises</a></li>
-                    <li><a href="" class="text text-dark">Change your details</a></li>
-                    <li><a href="" class="text text-dark">Change your password</a></li>
-                    <li><p class="font-weight-bold">Other</p></li>
+                    {{-- <li><a href="{{route('courses.create')}}" class="text text-dark">Add Course on website</a></li> --}}
+                    {{-- <li><a href="{{route('notices.create')}}" class="text text-dark">Post Notice</a></li>                             --}}
+                    {{-- <li><a href="{{route('practicals.index')}}" class="text text-dark">Practicals</a></li> --}}
+                    {{-- <li><a href="{{route('practicals.create')}}" class="text text-dark">Add Practical</a></li>                             --}}
+                    {{-- <li><a href="{{route('notices.create')}}" class="text text-dark">Post Notice</a></li>                             --}}
+                    {{-- <li><a href="" class="text text-dark">Marks</a></li>                             --}}
+                    {{-- <li><a href="" class="text text-dark">Notice boards</a></li>                         --}}
+                    {{-- <li><a href="" class="text text-dark">Lectures notes</a></li> --}}
+                    {{-- <li><a href="" class="text text-dark">Online Exercises</a></li> --}}
+                    {{-- <li><a href="" class="text text-dark">Online Exercises</a></li> --}}
+                    {{-- <li><a href="" class="text text-dark">Change your details</a></li> --}}
+                    {{-- <li><a href="" class="text text-dark">Change your password</a></li> --}}
+                    {{-- <li><p class="font-weight-bold">Other</p></li> --}}
                     <hr>
                     <a href=""></a>
                 </ul>

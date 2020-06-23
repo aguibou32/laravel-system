@@ -51,6 +51,16 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="gender">Select the course you are applying for:</label>
+                        <select name="course_apply" id="course_apply" class="form-control">
+                            <option value="Autodesk Inventor CAD">Autodesk Inventor CAD</option>
+                            <option value="IT Skills">IT Skills</option>
+                            <option value="Matric Re-write">Matric Re-write</option>
+                            <option value="Adult Matric">Adult Matric</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="gender">Select Gender</label>
                         <select name="gender" id="gender" class="form-control">
                             <option value="male">male</option>
@@ -117,6 +127,7 @@
                     <hr>
                     <h3 class="text text-info">Student's educational background  </h3>
 
+                    
                     <div class="form-group">
                         <label for="institution_name">Institution name </label>
                         <input type="text" name="institution_name" id="institution_name" class="form-control @error('institution_name') is-invalid @enderror" value="{{old('institution_name')}}" placeholder="Example: Rand Tutorial College">
@@ -130,7 +141,7 @@
 
                     <div class="form-group">
                         <label for="year_of_study">Year of study </label>
-                        <input type="text" name="year_of_study" id="year_of_study" class="form-control @error('year_of_study') is-invalid @enderror" value="{{old('year_of_study')}}" placeholder="Example: 2010">
+                        <input type="text" maxlength="4" name="year_of_study" id="year_of_study" class="form-control @error('year_of_study') is-invalid @enderror" value="{{old('year_of_study')}}" placeholder="Example: 2010">
                         
                         @error('year_of_study')
                             <span class="help text-danger" role="alert">
@@ -194,7 +205,7 @@
 
                         {{-- <input type="text" class="form-control" aria-label="Text input with checkbox" required> --}}
                         <div class="form-group">
-                            <button class="btn btn-primary rounded-0">Send Application</button>
+                            <button class="btn btn-primary rounded-0" onclick="return confirm('Confirm application submission ?')">Send Application</button>
                         </div>
                     </div>
                 </form>

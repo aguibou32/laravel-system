@@ -8,7 +8,7 @@
                 <ul>
                   <li><span class="icon icon-map-marker"></span><span class="text">Mr Price Building, Crn Albertina Sisulu And Von Brandis, Johannesburg</span></li>
                   <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 74 153 6527</span></a></li>
-                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@mechengendesign.co.za</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@oracademy.co.za</span></a></li>
                 </ul>
               </div>
           </div>

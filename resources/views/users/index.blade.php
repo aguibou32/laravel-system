@@ -52,11 +52,10 @@
                         <td>
                           <form method="POST" action="{{ route('users.destroy', $user->id) }}" class="">
                             <a href="" class="fa fa-eye fa-lg mr-2 text-info" ></a>
-                            <a href="" class="fa fa-pencil-square-o fa-lg mr-2 text-warning" ></a>
-                            
+                                                        
                             @csrf
                             @method('DELETE')
-                            <button class="fa fa-trash fa-lg text-danger" onclick="return confirm('Do you want to remove this practical?')"></button>
+                            <button class="fa fa-trash fa-lg text-danger" onclick="return confirm('Do you want to remove this user?')"></button>
                         </form>
                         </td>
 
