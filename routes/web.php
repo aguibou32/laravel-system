@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    // Route::get('/', function () {
-    //     return view('welcome');
-    // });
-    
-    // Route::get('/about', function() {
-    //     return view('pages.about');
-    // });
     
     // The web page routes 
 Route::get('/', 'PagesController@welcome')->name('pages.welcome');
@@ -47,7 +40,7 @@ Route::resource('students', 'StudentsController');
 
 Route::resource('users', 'UsersController');
 
-Route::resource('callback', 'RequestCallBackController')->middleware('auth');;
+Route::resource('callback', 'RequestCallBackController');
 
 Route::resource('add_student_to_course', 'AddStudentToModule');
 

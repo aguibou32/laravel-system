@@ -45,7 +45,12 @@ class User extends Authenticatable
     // Thanks to to the $with attribute, whenever we get a user, we will also get the profile fields
     protected $with =['profile'];
     
+    // Calling this method on a user output true or false. It makes it easy to know what type of user profile we are dealing with. To call the method: User::find(1)->hasAdministratorProfile();
+    public function getHasAdministratorProfileAttribute(){
+        return $this->profile_type == 'App\Administrator';
+    }
 
+    
     // Calling this method on a user output true or false. It makes it easy to know what type of user profile we are dealing with. To call the method: User::find(1)->hasStudentProfile();
     public function getHasStudentProfileAttribute(){
         return $this->profile_type == 'App\Student';

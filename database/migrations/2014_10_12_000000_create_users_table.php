@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('surname')->nullable();
             $table->string('email')->unique();
-            $table->string('username')->nullable()->unique();
+            $table->string('username')->unique();
             $table->string('profile_type')->nullable();
             $table->integer('profile_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            
+            $table->foreign('profile_id')->references('id')->on('students')->onDelete('cascade');
         });
     }
 

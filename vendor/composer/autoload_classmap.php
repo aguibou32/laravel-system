@@ -969,6 +969,8 @@ return array(
     'Hamcrest\\Type\\IsString' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+    'Haruncpi\\LaravelIdGenerator\\IdGenerator' => $vendorDir . '/haruncpi/laravel-id-generator/src/IdGenerator.php',
+    'Haruncpi\\LaravelIdGenerator\\IdGeneratorServiceProvider' => $vendorDir . '/haruncpi/laravel-id-generator/src/IdGeneratorServiceProvider.php',
     'Highlight\\Autoloader' => $vendorDir . '/scrivo/highlight.php/Highlight/Autoloader.php',
     'Highlight\\HighlightResult' => $vendorDir . '/scrivo/highlight.php/Highlight/HighlightResult.php',
     'Highlight\\Highlighter' => $vendorDir . '/scrivo/highlight.php/Highlight/Highlighter.php',

@@ -58,16 +58,6 @@ class UsersController extends Controller
             'profile_type' => 'required'
         ]);
 
-
-        // User::create([
-        //     'name' => request('name'),
-        //     'surname' => request('surname'),
-        //     'email' => request('surname'),
-        //     'username' => request('username'),
-        //     'profile_type' => request('profile_type'),
-        //     'password' => Hash::make(request('username')),
-        // ]);
-
         $user->name = request('name');
         $user->surname = request('surname');
         $user->email = request('surname');
@@ -82,6 +72,7 @@ class UsersController extends Controller
         $lastuser == null ? $last_user_id = 1 :  $last_user_id = $lastuser->id + 1;
 
         $user->username = $username;
+        
         $user->profile_type = request('profile_type');
 
         if ($user->profile_type == "App\Student") {
